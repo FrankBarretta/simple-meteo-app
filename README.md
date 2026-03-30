@@ -1,18 +1,18 @@
-# API Meteo
+# Weather API
 
-Applicazione web realizzata con React e Vite che permette di cercare una citta, convertirla in coordinate tramite l'API di geocoding di Open-Meteo e visualizzare meteo corrente e previsione dei prossimi 5 giorni.
+A web application built with React and Vite that allows you to search for a city, convert it to coordinates via the Open-Meteo geocoding API, and display current weather and a 5-day forecast.
 
-## Panoramica del progetto
+## Project Overview
 
-L'app e pensata come interfaccia semplice e immediata per consultare rapidamente il meteo di una localita.
-Il flusso principale e questo:
+The app is designed as a simple and straightforward interface for quickly checking the weather of a location.
+The main flow is as follows:
 
-1. L'utente inserisce il nome di una citta.
-2. L'app interroga il servizio di geocoding di Open-Meteo.
-3. Ottenute latitudine e longitudine, recupera i dati meteo correnti e la previsione breve.
-4. Mostra temperatura, temperatura percepita, umidita, vento, precipitazioni e stato meteo.
+1. The user enters the name of a city.
+2. The app queries the Open-Meteo geocoding service.
+3. Once latitude and longitude are obtained, it fetches current weather data and a short-term forecast.
+4. It displays temperature, perceived temperature, humidity, wind, precipitation, and weather status.
 
-## Tecnologie utilizzate
+## Technologies Used
 
 - React 19
 - Vite 7
@@ -20,84 +20,97 @@ Il flusso principale e questo:
 - Open-Meteo Geocoding API
 - Open-Meteo Forecast API
 
-## Funzionalita
+## Features
 
-- Ricerca meteo per citta con input libero.
-- Risoluzione automatica del nome della citta in coordinate geografiche.
-- Visualizzazione del meteo attuale.
-- Visualizzazione di dettagli aggiuntivi come umidita, vento, pioggia e stato giorno/notte.
-- Previsione sintetica per 5 giorni.
-- Gestione degli errori per input vuoto, citta non trovata e problemi di risposta API.
-- Stato di caricamento durante le richieste.
-- Test automatici per servizi e pagina principale.
+- Weather search by city with free text input.
+- Automatic resolution of the city name into geographic coordinates.
+- Display of current weather.
+- Display of additional details such as humidity, wind, rain, and day/night status.
+- Summary forecast for 5 days.
+- Error handling for empty input, city not found, and API response issues.
+- Loading state during requests.
+- Automated tests for services and main page.
 
-## Nota importante sul logging
+## Important Note on Logging
 
-Il repository attuale non include alcun sistema di logging su file. L'app e interamente frontend e non contiene codice per salvare le risposte API in un file di log locale o remoto. Se vuoi aggiungere questa funzione, serve introdurre almeno un backend o un servizio esterno di raccolta log.
+The current repository does not include any file-based logging system. The app is entirely frontend and does not contain code for saving API responses to a local or remote log file. If you want to add this feature, you need to introduce at least a backend or an external log collection service.
 
-## Installazione
+## Installation
 
-### Prerequisiti
+### Prerequisites
 
-- Node.js 18 o superiore
+- Node.js 18 or higher
 - npm
 
-### Passaggi
 
+
+
+### Steps
+
+Clone this repository:
+   ```bash
+   git clone https://github.com/yourusername/weather-app-open-meteo.git
+   ```
+Navigate to the project folder:
+   ```bash
+   cd weather-app-open-meteo
+   ```
+
+Install dependencies:
 ```bash
 npm install
 ```
 
-Per avviare l'ambiente di sviluppo:
+To start the development environment:
 
 ```bash
 npm run dev
 ```
 
-Per creare la build di produzione:
+To create the production build:
 
 ```bash
 npm run build
 ```
 
-Per visualizzare la build localmente:
+To preview the build locally:
 
 ```bash
 npm run preview
 ```
 
-## Guida all'uso
+## Usage Guide
 
-1. Avvia l'app con `npm run dev`.
-2. Apri il browser all'indirizzo mostrato da Vite, di solito `http://localhost:5173`.
-3. Inserisci il nome di una citta nel campo di ricerca, ad esempio `Milano`.
-4. Premi il pulsante `Cerca`.
-5. Consulta i dati meteo attuali e la previsione dei giorni successivi.
+1. Start the app with `npm run dev`.
+2. Open the browser at the address shown by Vite, usually `http://localhost:5173`.
+3. Enter the name of a city in the search field, for example `Milano`.
+4. Press the `Search` button.
+5. View the current weather data and the forecast for the upcoming days.
 
-### Comportamento in caso di errore
+### Error Behavior
 
-- Se il campo e vuoto, l'app mostra un messaggio che richiede l'inserimento di una citta.
-- Se la citta non viene trovata, l'app mostra un errore dedicato.
-- Se una delle API risponde con errore, l'interfaccia informa l'utente senza bloccare la pagina.
+- If the field is empty, the app displays a message requesting the user to enter a city.
+- If the city is not found, the app shows a dedicated error message.
+- If one of the APIs responds with an error, the interface informs the user without blocking the page.
 
-## Output di esempio
+## Example Output
 
-### Esempio di utilizzo
+### Usage Example
 
-Input utente:
+User input:
 
 ```text
 Milano
 ```
 
-Possibile risultato mostrato nell'interfaccia:
+Possible result displayed in the interface:
 
 ```text
-Meteo attuale
+Current Weather
 Milano, Lombardia, Italia
-Parzialmente nuvoloso
+Partly cloudy
 18°C
-Percepita 17°C
+Feels like 17°C
 
 Dettagli
 Umidita: 61%
@@ -113,13 +126,13 @@ Gio 15/05  11°C / 19°C
 Ven 16/05  10°C / 18°C
 ```
 
-### Esempio di messaggio di errore
+### Error Message Example
 
 ```text
-Nessuna citta trovata. Controlla il nome inserito.
+No city found. Check the name you entered.
 ```
 
-## Script disponibili
+## Available Scripts
 
 ```bash
 npm run dev
@@ -129,46 +142,46 @@ npm run test
 npm run test:watch
 ```
 
-## Test
+## Tests
 
-Esecuzione test una tantum:
+Run tests once:
 
 ```bash
 npm test
 ```
 
-Esecuzione test in watch mode:
+Run tests in watch mode:
 
 ```bash
 npm run test:watch
 ```
 
-## Struttura del progetto
+## Project Structure
 
 ```text
 src/
-  assets/          Risorse statiche e icone
-  components/      Componenti UI riutilizzabili
-  hooks/           Hook custom per logica applicativa
-  pages/           Pagine dell'app
-  services/        Chiamate alle API esterne
-  styles/          Variabili e stili globali
-  utils/           Funzioni di formattazione e mapping
-  test/            Setup dei test
+  assets/          Static resources and icons
+  components/      Reusable UI components
+  hooks/           Custom hooks for application logic
+  pages/           App pages
+  services/        External API calls
+  styles/          Variables and global styles
+  utils/           Formatting and mapping functions
+  test/            Test setup
 ```
 
-## API utilizzate
+## APIs Used
 
 - Geocoding: https://geocoding-api.open-meteo.com/v1/search
 - Forecast: https://api.open-meteo.com/v1/forecast
 
-## Miglioramenti futuri
+## Future Improvements
 
-- Aggiungere cronologia delle ricerche recenti.
-- Introdurre suggerimenti automatici durante la digitazione della citta.
-- Consentire la geolocalizzazione dell'utente.
-- Gestire unita di misura alternative come Fahrenheit e mph.
-- Aggiungere icone meteo piu ricche e animazioni leggere.
-- Integrare un backend per logging, analytics o cache delle risposte.
-- Salvare preferenze utente in localStorage.
-- Ampliare copertura test con scenari end-to-end.
+- Add recent search history.
+- Introduce autocomplete suggestions while typing the city name.
+- Allow user geolocation.
+- Support alternative units of measurement such as Fahrenheit and mph.
+- Add richer weather icons and subtle animations.
+- Integrate a backend for logging, analytics, or response caching.
+- Save user preferences in localStorage.
+- Expand test coverage with end-to-end scenarios.
