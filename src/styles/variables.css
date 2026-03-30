@@ -1,0 +1,18 @@
+:root {
+  --bg-main: #f2efe8;
+  --bg-panel: rgba(255, 250, 240, 0.72);
+  --bg-card: rgba(255, 255, 255, 0.82);
+  --bg-card-strong: #203a43;
+  --text-main: #162126;
+  --text-muted: #5c6c72;
+  --text-inverse: #f9f6f0;
+  --accent: #ef8354;
+  --accent-dark: #cf6131;
+  --border: rgba(22, 33, 38, 0.08);
+  --shadow: 0 24px 80px rgba(32, 58, 67, 0.16);
+  --radius-xl: 28px;
+  --radius-lg: 20px;
+  --radius-md: 14px;
+  --font-heading: 'Space Grotesk', 'Segoe UI', sans-serif;
+  --font-body: 'DM Sans', 'Segoe UI', sans-serif;
+}
